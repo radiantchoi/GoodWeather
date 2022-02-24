@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,12 +33,32 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="GoodWeather" id="330-2W-Svg">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="IoQ-fH-we3"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NCj-La-fAu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NCj-La-fAu">
+                            <connections>
+                                <segue destination="Xey-gL-TRJ" kind="presentation" id="O2N-eZ-6GL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eA4-sR-g7N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="513.04347826086962" y="-14.0625"/>
+        </scene>
+        <!--Add City-->
+        <scene sceneID="4yC-lx-VLE">
+            <objects>
+                <viewController id="xjM-al-M1K" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XIf-7X-VhM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="P37-bb-1Zv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add City" id="507-BI-eT7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="16D-x8-9Aj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2315.9420289855075" y="-14.0625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2F2-oT-JQ0">
@@ -56,6 +77,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qF6-1p-xNH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-397.10144927536237" y="-14.0625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VGc-FQ-bC7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xey-gL-TRJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C2E-h6-oh3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xjM-al-M1K" kind="relationship" relationship="rootViewController" id="fSz-bN-qDy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7kY-Nf-Je8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1405.7971014492755" y="-14.0625"/>
         </scene>
     </scenes>
     <resources>
