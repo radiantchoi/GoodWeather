@@ -14,6 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let azure = UIColor(displayP3Red: 41/255, green: 128/255, blue: 185/255, alpha: 1.0)
+//        UINavigationBar.appearance().barTintColor = azure
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: azure]
+        UIBarButtonItem.appearance().tintColor = azure
+        
         return true
     }
 
