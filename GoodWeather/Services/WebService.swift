@@ -24,6 +24,7 @@ final class WebService {
                 completion(nil)
             }
             
+            print(data)
         }.resume()
     }
 }
