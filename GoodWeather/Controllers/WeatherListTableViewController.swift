@@ -17,17 +17,18 @@ extension WeatherListTableViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        let resource = Resource(url: URL(string: "https://api.openweathermap.org/data/2.5/weather?q=Seongnam&appid=196f7bc70743aeee8712067f634e1eb6&units=metric")!) { data in
-            return try? JSONDecoder().decode(WeatherResponse.self, from: data)
-        }
         
-        WebService().load(resource: resource) { weatherResponse in
-            guard let weatherResponse = weatherResponse else {
-                return
-            }
-            
-            print(weatherResponse)
-        }
+//        let resource = Resource(url: URL(string: "https://api.openweathermap.org/data/2.5/weather?q=Seongnam&appid=196f7bc70743aeee8712067f634e1eb6&units=metric")!) { data in
+//            return try? JSONDecoder().decode(WeatherResponse.self, from: data)
+//        }
+//
+//        WebService().load(resource: resource) { weatherResponse in
+//            guard let weatherResponse = weatherResponse else {
+//                return
+//            }
+//
+//            print(weatherResponse)
+//        }
     }
 }
 
