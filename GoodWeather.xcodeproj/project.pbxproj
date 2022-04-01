@@ -23,6 +23,7 @@
 		4FE08E6527F74D3F001DD1D2 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE08E6427F74D3F001DD1D2 /* WeatherListViewModel.swift */; };
 		4FE08E6727F74DF7001DD1D2 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE08E6627F74DF7001DD1D2 /* WeatherViewModel.swift */; };
 		4FE08E6A27F74F66001DD1D2 /* AddWeatherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE08E6927F74F66001DD1D2 /* AddWeatherDelegate.swift */; };
+		4FE08E6C27F775A4001DD1D2 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE08E6B27F775A4001DD1D2 /* Double+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		4FE08E6427F74D3F001DD1D2 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
 		4FE08E6627F74DF7001DD1D2 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		4FE08E6927F74F66001DD1D2 /* AddWeatherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherDelegate.swift; sourceTree = "<group>"; };
+		4FE08E6B27F775A4001DD1D2 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				4F7212EF27D67A6500C211EC /* String+Extensions.swift */,
+				4FE08E6B27F775A4001DD1D2 /* Double+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			files = (
 				4F7212F027D67A6500C211EC /* String+Extensions.swift in Sources */,
 				4FE08E6727F74DF7001DD1D2 /* WeatherViewModel.swift in Sources */,
+				4FE08E6C27F775A4001DD1D2 /* Double+Extensions.swift in Sources */,
 				4FC2586E27D51B71000D4D94 /* WebService.swift in Sources */,
 				4FD20FBE27CE6DD800C58459 /* WeatherListTableViewController.swift in Sources */,
 				4F1AFE1427C7F86D006B2F1A /* AppDelegate.swift in Sources */,
