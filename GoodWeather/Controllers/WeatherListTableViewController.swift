@@ -10,6 +10,8 @@ import UIKit
 
 class WeatherListTableViewController: UITableViewController {
     
+    private var weatherListViewModel = WeatherListViewModel()
+    
 }
 
 extension WeatherListTableViewController {
@@ -17,6 +19,13 @@ extension WeatherListTableViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+}
+
+extension WeatherListTableViewController: AddWeatherDelegate {
+    func addWeatherDidSave(viewModel: WeatherViewModel) {
+        weatherListViewModel.addWeatherViewModel(viewModel)
+        self.tableView.reloadData()
     }
 }
 
@@ -30,13 +39,35 @@ extension WeatherListTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return weatherListViewModel.numOfRows(section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
-        cell.cityNameLabel?.text = "Houston"
-        cell.temperatureLabel?.text = "70°"
+        
+        let weatherViewModel = weatherListViewModel.modelAt(indexPath.row)
+        cell.configure(weatherViewModel)
+        
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddWeatherCityViewController" {
+            prepareSegueForAddWeatherCityViewController(segue: segue)
+        }
+    }
+}
+
+extension WeatherListTableViewController {
+    func prepareSegueForAddWeatherCityViewController(segue: UIStoryboardSegue) {
+        guard let nav = segue.destination as? UINavigationController else {
+            fatalError("NavigationController not found")
+        }
+        
+        guard let addWeatherCityViewController = nav.viewControllers.first as? AddCityViewController else {
+            fatalError("AddCityViewController not found")
+        }
+        
+        addWeatherCityViewController.delegate = self
     }
 }
