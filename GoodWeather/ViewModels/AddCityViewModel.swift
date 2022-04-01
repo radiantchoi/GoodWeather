@@ -12,7 +12,7 @@ class AddCityViewModel {
 }
 
 extension AddCityViewModel {
-    func addWeather(for city: String, completion: (WeatherViewModel) -> Void) {
+    func addWeather(for city: String, completion: @escaping (WeatherViewModel) -> Void) {
         let weatherURL = Constants.Urls.UrlForWeatherByCity(city: city)
         let weatherResource = Resource<WeatherResponse>(url: weatherURL) { data in
             let weatherResponse = try? JSONDecoder().decode(WeatherResponse.self, from: data)

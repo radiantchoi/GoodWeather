@@ -20,6 +20,9 @@
 		4FD20FBE27CE6DD800C58459 /* WeatherListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD20FBD27CE6DD800C58459 /* WeatherListTableViewController.swift */; };
 		4FD20FC027CE6E0500C58459 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD20FBF27CE6E0500C58459 /* AddCityViewController.swift */; };
 		4FD2FF9127D1243000678571 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD2FF9027D1243000678571 /* WeatherCell.swift */; };
+		4FE08E6527F74D3F001DD1D2 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE08E6427F74D3F001DD1D2 /* WeatherListViewModel.swift */; };
+		4FE08E6727F74DF7001DD1D2 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE08E6627F74DF7001DD1D2 /* WeatherViewModel.swift */; };
+		4FE08E6A27F74F66001DD1D2 /* AddWeatherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE08E6927F74F66001DD1D2 /* AddWeatherDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		4FD20FBD27CE6DD800C58459 /* WeatherListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListTableViewController.swift; sourceTree = "<group>"; };
 		4FD20FBF27CE6E0500C58459 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 		4FD2FF9027D1243000678571 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		4FE08E6427F74D3F001DD1D2 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
+		4FE08E6627F74DF7001DD1D2 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		4FE08E6927F74F66001DD1D2 /* AddWeatherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 		4F1AFE1227C7F86D006B2F1A /* GoodWeather */ = {
 			isa = PBXGroup;
 			children = (
+				4FE08E6827F74F55001DD1D2 /* Protocols */,
 				4F7212EE27D67A5100C211EC /* Extensions */,
 				4F7212EB27D67A0400C211EC /* Utilities */,
 				4F7212E827D679AB00C211EC /* ViewModels */,
@@ -99,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				4F7212E927D679C700C211EC /* AddCityViewModel.swift */,
+				4FE08E6427F74D3F001DD1D2 /* WeatherListViewModel.swift */,
+				4FE08E6627F74DF7001DD1D2 /* WeatherViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -150,6 +159,14 @@
 				4FD2FF9027D1243000678571 /* WeatherCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		4FE08E6827F74F55001DD1D2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4FE08E6927F74F66001DD1D2 /* AddWeatherDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,11 +241,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F7212F027D67A6500C211EC /* String+Extensions.swift in Sources */,
+				4FE08E6727F74DF7001DD1D2 /* WeatherViewModel.swift in Sources */,
 				4FC2586E27D51B71000D4D94 /* WebService.swift in Sources */,
 				4FD20FBE27CE6DD800C58459 /* WeatherListTableViewController.swift in Sources */,
 				4F1AFE1427C7F86D006B2F1A /* AppDelegate.swift in Sources */,
 				4F7212E727D65ABC00C211EC /* WeatherResponse.swift in Sources */,
 				4FD2FF9127D1243000678571 /* WeatherCell.swift in Sources */,
+				4FE08E6527F74D3F001DD1D2 /* WeatherListViewModel.swift in Sources */,
+				4FE08E6A27F74F66001DD1D2 /* AddWeatherDelegate.swift in Sources */,
 				4F1AFE1627C7F86D006B2F1A /* SceneDelegate.swift in Sources */,
 				4FD20FC027CE6E0500C58459 /* AddCityViewController.swift in Sources */,
 				4F7212EA27D679C700C211EC /* AddCityViewModel.swift in Sources */,
