@@ -11,6 +11,7 @@ import UIKit
 class WeatherListTableViewController: UITableViewController {
     
     private var weatherListViewModel = WeatherListViewModel()
+    private var lastUnitSelection: Unit!
     
 }
 
@@ -19,6 +20,10 @@ extension WeatherListTableViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        let userDefaults = UserDefaults.standard
+        if let value = userDefaults.value(forKey: "unit") as? String {
+            self.lastUnitSelection = Unit(rawValue: value)!
+        }
     }
 }
 
@@ -31,7 +36,11 @@ extension WeatherListTableViewController: AddWeatherDelegate {
 
 extension WeatherListTableViewController: SettingsDelegate {
     func settingsDone(viewModel: SettingsViewModel) {
-        <#code#>
+        if lastUnitSelection.rawValue != viewModel.selectedUnit.rawValue {
+            weatherListViewModel.updateUnit(to: viewModel.selectedUnit)
+            tableView.reloadData()
+            lastUnitSelection = Unit(rawValue: viewModel.selectedUnit.rawValue)!
+        }
     }
 }
 
@@ -80,5 +89,15 @@ extension WeatherListTableViewController {
         addWeatherCityViewController.delegate = self
     }
     
-    
+    private func prepareSegueForSettingsTableViewController(segue: UIStoryboardSegue) {
+        guard let nav = segue.destination as? UINavigationController else {
+            fatalError("NavigationController not found")
+        }
+        
+        guard let settingsTableViewController = nav.viewControllers.first as? SettingsTableViewController else {
+            fatalError("SettingsTableViewController not found")
+        }
+        
+        settingsTableViewController.delegate = self
+    }
 }

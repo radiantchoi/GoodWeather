@@ -19,6 +19,7 @@ class SettingsTableViewController: UITableViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+
 }
 
 extension SettingsTableViewController {

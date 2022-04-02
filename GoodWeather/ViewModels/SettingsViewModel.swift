@@ -8,7 +8,7 @@
 import Foundation
 
 enum Unit: String, CaseIterable {
-    case celsius = "metric"
+    case celcius = "metric"
     case farenheit = "imperial"
 }
 
@@ -17,7 +17,7 @@ extension Unit {
     var displayName: String {
         get {
             switch(self) {
-            case .celsius:
+            case .celcius:
                 return "Celcius"
             case .farenheit:
                 return "Farenheit"
@@ -38,7 +38,7 @@ class SettingsViewModel {
             if let value = userDefaults.value(forKey: "unit") as? String {
                 unitValue = value
             }
-            return Unit(rawValue: unitValue) ?? Unit.celsius
+            return Unit(rawValue: unitValue)!
         }
         set {
             let userDefault = UserDefaults.standard
