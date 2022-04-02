@@ -59,7 +59,7 @@
                     <navigationItem key="navigationItem" title="GoodWeather" id="330-2W-Svg">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="IoQ-fH-we3">
                             <connections>
-                                <segue destination="UX3-EB-pDW" kind="presentation" id="Fpt-Nq-dQ8"/>
+                                <segue destination="UX3-EB-pDW" kind="presentation" identifier="SettingsTableViewController" id="Fpt-Nq-dQ8"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NCj-La-fAu">

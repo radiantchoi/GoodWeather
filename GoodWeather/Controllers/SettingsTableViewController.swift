@@ -11,11 +11,14 @@ import UIKit
 class SettingsTableViewController: UITableViewController {
     private var settingsViewModel = SettingsViewModel()
     
+    var delegate: SettingsDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
+    
 }
 
 extension SettingsTableViewController {
@@ -56,5 +59,15 @@ extension SettingsTableViewController {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .none
         }
+    }
+}
+
+extension SettingsTableViewController {
+    @IBAction func done() {
+        if let delegate = self.delegate {
+            delegate.settingsDone(viewModel: settingsViewModel)
+        }
+        
+        self.dismiss(animated: true, completion: nil)
     }
 }

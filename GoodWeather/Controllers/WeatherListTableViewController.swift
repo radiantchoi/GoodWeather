@@ -29,6 +29,12 @@ extension WeatherListTableViewController: AddWeatherDelegate {
     }
 }
 
+extension WeatherListTableViewController: SettingsDelegate {
+    func settingsDone(viewModel: SettingsViewModel) {
+        <#code#>
+    }
+}
+
 extension WeatherListTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -54,12 +60,15 @@ extension WeatherListTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddWeatherCityViewController" {
             prepareSegueForAddWeatherCityViewController(segue: segue)
+        } else if segue.identifier == "SettingsTableViewController" {
+            prepareSegueForSettingsTableViewController(segue: segue)
         }
+        
     }
 }
 
 extension WeatherListTableViewController {
-    func prepareSegueForAddWeatherCityViewController(segue: UIStoryboardSegue) {
+    private func prepareSegueForAddWeatherCityViewController(segue: UIStoryboardSegue) {
         guard let nav = segue.destination as? UINavigationController else {
             fatalError("NavigationController not found")
         }
@@ -70,4 +79,6 @@ extension WeatherListTableViewController {
         
         addWeatherCityViewController.delegate = self
     }
+    
+    
 }
