@@ -10,9 +10,11 @@ import Foundation
 class WeatherViewModel {
     
     let weather: WeatherResponse
+    var temperature: Double
     
     init(weather: WeatherResponse) {
         self.weather = weather
+        temperature = weather.main.temp
     }
 }
 
@@ -20,9 +22,5 @@ extension WeatherViewModel {
     
     var city: String {
         return weather.name
-    }
-    
-    var temperature: Double {
-        return weather.main.temp
     }
 }

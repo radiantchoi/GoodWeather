@@ -23,4 +23,31 @@ extension WeatherListViewModel {
     func modelAt(_ index: Int) -> WeatherViewModel {
         return weatherViewModels[index]
     }
+    
+    func updateUnit(to unit: Unit) {
+        switch unit {
+        case .celcius:
+            toCelcius()
+        case .farenheit:
+            toFarenheit()
+        }
+    }
+}
+
+extension WeatherListViewModel {
+    func toCelcius() {
+        weatherViewModels = weatherViewModels.map { viewModel in
+            let weatherModel = viewModel
+            weatherModel.temperature = (weatherModel.temperature - 32) * 5/9
+            return weatherModel
+        }
+    }
+    
+    func toFarenheit() {
+        weatherViewModels = weatherViewModels.map { viewModel in
+            let weatherModel = viewModel
+            weatherModel.temperature = (weatherModel.temperature * 9/5) + 32
+            return weatherModel
+        }
+    }
 }
